@@ -1,9 +1,8 @@
-module github.com/Nageswar0550/microservices-demo/tree/main/src/frontend
+module github.com/Nageswar0550/microservices-demo/src/frontend
 
 go 1.22.2
 
 require (
-	github.com/Nageswar0550/microservices-demo v0.0.0-20240703174119-218b092489ea
 	github.com/go-playground/validator/v10 v10.22.0
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/mux v1.8.1

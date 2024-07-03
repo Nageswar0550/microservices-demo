@@ -1,5 +1,3 @@
-github.com/Nageswar0550/microservices-demo v0.0.0-20240703174119-218b092489ea h1:7Qg5w0wny8Efmfu1aMIph2xaRFnOanMHDPrnUPe4q0M=
-github.com/Nageswar0550/microservices-demo v0.0.0-20240703174119-218b092489ea/go.mod h1:CDrvTlILWQEdn+kJRX7DVzZ9hFbloFgxxEcnsO2u8UE=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

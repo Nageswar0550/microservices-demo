@@ -54,6 +54,8 @@ var (
 	plat platformDetails
 )
 
+var log = logrus.New()
+
 var validEnvs = []string{"local", "gcp", "azure", "aws", "onprem", "alibaba"}
 
 func (fe *frontendServer) homeHandler(w http.ResponseWriter, r *http.Request) {
@@ -187,13 +189,13 @@ func (fe *frontendServer) productHandler(w http.ResponseWriter, r *http.Request)
 
 	// Fetch packaging info (weight/dimensions) of the product
 	// The packaging service is an optional microservice you can run as part of a Google Cloud demo.
-	var packagingInfo *PackagingInfo = nil
-	if isPackagingServiceConfigured() {
-		packagingInfo, err = httpGetPackagingInfo(id)
-		if err != nil {
-			fmt.Println("Failed to obtain product's packaging info:", err)
-		}
-	}
+	//var packagingInfo *PackagingInfo = nil
+	//if isPackagingServiceConfigured() {
+	//	packagingInfo, err = httpGetPackagingInfo(id)
+	//	if err != nil {
+	//		fmt.Println("Failed to obtain product's packaging info:", err)
+	//	}
+	//}
 
 	if err := templates.ExecuteTemplate(w, "product", injectCommonTemplateData(r, map[string]interface{}{
 		"ad":              fe.chooseAd(r.Context(), p.Categories, log),
@@ -202,7 +204,7 @@ func (fe *frontendServer) productHandler(w http.ResponseWriter, r *http.Request)
 		"product":         product,
 		"recommendations": recommendations,
 		"cart_size":       cartSize(cart),
-		"packagingInfo":   packagingInfo,
+//		"packagingInfo":   packagingInfo,
 	})); err != nil {
 		log.Println(err)
 	}
@@ -557,7 +559,7 @@ func injectCommonTemplateData(r *http.Request, payload map[string]interface{}) m
 		"platform_name":     plat.provider,
 		"is_cymbal_brand":   isCymbalBrand,
 		"assistant_enabled": assistantEnabled,
-		"deploymentDetails": deploymentDetailsMap,
+		//"deploymentDetails": deploymentDetailsMap,
 		"frontendMessage":   frontendMessage,
 		"currentYear":       time.Now().Year(),
 	}
